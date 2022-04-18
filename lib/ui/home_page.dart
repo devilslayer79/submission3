@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:restaurant_apps/ui/detail_page.dart';
+import 'package:restaurant_apps/ui/restaurant_detail_page.dart';
 
 import 'package:restaurant_apps/ui/restaurant_list_page.dart';
 import 'package:restaurant_apps/ui/search_page.dart';
 import 'package:restaurant_apps/ui/settings.dart';
 import 'package:restaurant_apps/utils/notification_helper.dart';
 
+import '../widgets/detail_widget.dart';
 import 'favorite_page.dart';
 
 class HomePage extends StatefulWidget {
@@ -82,7 +84,7 @@ class _HomePageState extends State<HomePage> {
   void initState() {
     super.initState();
     _notificationHelper
-        .configurareSelectNotificationSubjec(RestaurantDetailPage.routeName);
+        .configurareSelectNotificationSubjec(DetailPage.routeName);
   }
 
   @override

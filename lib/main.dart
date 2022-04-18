@@ -15,11 +15,13 @@ import 'package:restaurant_apps/provider/restaurant_provider.dart';
 import 'package:restaurant_apps/provider/scheduling_provider.dart';
 import 'package:restaurant_apps/provider/search_provider.dart';
 import 'package:restaurant_apps/ui/detail_page.dart';
+import 'package:restaurant_apps/ui/restaurant_detail_page.dart';
 import 'package:restaurant_apps/ui/favorite_page.dart';
 
 import 'package:restaurant_apps/ui/search_page.dart';
 import 'package:restaurant_apps/utils/background_service.dart';
 import 'package:restaurant_apps/utils/notification_helper.dart';
+import 'package:restaurant_apps/widgets/detail_widget.dart';
 import 'package:restaurant_apps/widgets/splash.dart';
 
 final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
@@ -74,9 +76,9 @@ class MyApp extends StatelessWidget {
           initialRoute: Splash.routeName,
           routes: {
             Splash.routeName: (context) => const Splash(),
-            RestaurantDetailPage.routeName: ((context) => RestaurantDetailPage(
-                  restaurants: ModalRoute.of(context)?.settings?.arguments
-                      as DetailRestaurant,
+            DetailPage.routeName: ((context) => DetailPage(
+                  restaurant: ModalRoute.of(context)?.settings?.arguments
+                      as RestaurantElement,
                 )),
             SearchPage.routeName: (context) => SearchPage(),
             FavoritePage.routeName: (context) => FavoritePage(),

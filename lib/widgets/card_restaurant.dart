@@ -5,6 +5,8 @@ import 'package:restaurant_apps/data/model/detail_restaurant.dart';
 import 'package:restaurant_apps/data/model/restaurant.dart';
 import 'package:restaurant_apps/provider/favorite_provider.dart';
 import 'package:restaurant_apps/ui/detail_page.dart';
+import 'package:restaurant_apps/ui/restaurant_detail_page.dart';
+import 'package:restaurant_apps/widgets/detail_widget.dart';
 
 import '../common/navigation.dart';
 
@@ -82,14 +84,8 @@ class CardRestaurant extends StatelessWidget {
                     ),
                   ],
                 ),
-                onTap: () async {
-                  DetailRestaurant restaurant =
-                      await ApiService().restaurantDetailApi(restaurants.id);
-
-                  Navigation.intentWithData(
-                    RestaurantDetailPage.routeName,
-                    restaurant,
-                  );
+                onTap: () {
+                  Navigator.pushNamed(context, DetailPage.routeName);
                 },
               ),
             );
